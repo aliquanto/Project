@@ -3,7 +3,8 @@ services:
   db:
     image: postgres:10-alpine
     volumes:
-      - ./db_data:/data
+      - db_data:/data
+    
     ports:
       - "5432:5432"
     environment:
@@ -18,3 +19,6 @@ services:
       - ./db_data:/redis
     ports:
       - "6379:6379"
+
+volumes:
+  db_data:
